@@ -1,0 +1,205 @@
+$back-dark: #202020
+$back-light: #FFFFFF
+$highlight: #060079 
+$light-gray: #e5e5e5
+$gray: #707070
+$dark-gray: #3F3F3F
+
+$max-width: 800px
+
+.Person
+    display: flex
+    flex-direction: column 
+
+    margin-bottom: 2rem
+    h1
+       all: unset
+       border: none !important
+       font-size: 1.5rem
+
+       @media screen and ( max-width: $max-width )
+            text-align: center
+
+    .wrapper
+        display: grid
+        grid-template-columns: 1fr 3fr
+
+        @media screen and ( max-width: $max-width )
+            display: flex
+            flex-direction: column
+
+            p
+                padding-top: 1rem
+            
+
+        img
+            width: 8rem
+            height: 8rem
+            border-radius: 100vmax
+            background-color: $light-gray
+            margin: auto
+            object-fit: cover
+
+            box-shadow: 3px 3px 10px 1px $dark-gray
+
+.stackable_context
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    .Person
+        display: inline-block
+        .wrapper
+            padding-top: 1rem
+            //display: inline-block
+            display: flex
+            justify-content: center
+
+        h1
+            padding: none
+            text-align: center
+
+.research_container
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+
+.Research
+    width: 15rem
+    height: 20rem
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    position: relative
+
+    isolation: isolate
+
+    border-radius: .5rem
+
+    transition: all 0.2s
+
+    margin: 1rem
+    flex-shrink: 0
+
+    &.extended
+        margin: 0
+        padding: 0
+        position: fixed
+        top: 50% 
+        left: 50% 
+        z-index: 10
+        display: block
+
+        $textsize: calc(80ch + 8rem)
+        width: min(90%, $textsize)
+
+        transform: translate(-50%, -50%)
+
+        overflow-y: auto
+
+        height: min(40rem, 90vh)
+
+        .wrapper 
+            img
+                max-width: 15rem !important
+                border-radius: .5rem
+                display: none
+                object-fit: cover
+            &::after
+                content: none
+            h1
+                padding-top: 1rem !important
+                position: relative
+                color: $back-dark !important
+                text-align: center
+
+        &::after
+            content: none
+
+        > p
+            text-align: right
+            max-width: 80ch
+            margin: auto
+
+        .expand
+            display: inline-block
+            left: 50% 
+            top: 1rem 
+            border-radius: 100vmax
+            height: min-content
+            position: sticky
+            transform: translateX(-50%)
+            padding: .3rem
+            transform-origin: left
+
+            &:hover
+                width: 50%
+                border-radius: 100vmax
+                transform: scale(1.02) translateX(-50%)
+
+    .wrapper
+        isolation: isolate
+        position: relative
+        img
+            max-width: 100%  !important
+            z-index: -1
+            user-select: none
+
+        h1
+            position: absolute
+            bottom: 0
+            left: 0
+            padding: 0 !important
+            border: none !important
+            font-size: 1.1rem
+            color: $back-light !important
+            padding-left: .5rem !important
+            z-index: 1
+            &:only-child
+                position: relative
+                color: $back-dark !important
+                margin-top: 1rem
+        &.no-image::after
+            content: none
+            display: block
+        
+        &::after
+            left: 0
+            top: 0
+            position: absolute
+            content: ""
+            width: 100%
+            height: 100%
+            background: linear-gradient(0deg, rgba(0,0,0,.8) 0%, rgba(0,0,0,0.7819502801120448) 30%, rgba(0,0,0,0) 100%)
+    > p
+        overflow: hidden
+        padding: .5rem
+
+    background-color: $back-light
+    box-shadow: 3px 3px 10px 1px $dark-gray
+
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 3rem
+        background: linear-gradient(0deg, $back-light 0%, $back-light 40%, transparentize($back-light, .5) 100%)
+
+    .expand
+        width: 50%
+        background-color: $back-dark
+        position: absolute
+        bottom: 1rem 
+        left: 50%
+        transform: translate(-50%)
+        z-index: 1
+        border-radius: 100vmax
+        color: $back-light
+        text-align: center
+        padding: .2rem
+        user-select: none
+
+        transition: all .3s
+        &:hover
+            width: 80%

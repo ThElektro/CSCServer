@@ -1,0 +1,3 @@
+Se utilizó el comando 
+setcap cap_net_bind_service=+ep /usr/bin/node
+para dar acceso a node al puerto 80

@@ -1,0 +1,13 @@
+[Unit]
+Description=Node web server
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=csc
+ExecStart=node /home/csc/WebServer/webserver.js
+
+[Install]
+WantedBy=multi-user.target
