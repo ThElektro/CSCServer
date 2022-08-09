@@ -5,6 +5,7 @@ const app = express();
 const port = 80;
 const root = path.join(__dirname, "web");
 
+app.disable('x-powered-by');
 app.use(express.static(root));
 
 app.get("/", (req, res) => {
