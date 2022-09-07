@@ -1,8 +1,3 @@
-<div id="about"></div>
-
-# Acerca de
-[TODO]
-
 <div id="projects">
 
 # Líneas de investigación
@@ -52,11 +47,6 @@ Actualmente contamos con la obtención y caracterización de la amplia gama de p
 
 Proyecto vigente: *Optimización de subproductos de interés en la salud humana derivados de Synsepalum Dulcíficum D. y plantas similares.*
 </Research>
-
-<div id="articles"></div>
-
-# Artículos
-[TODO]
 
 <div id="investigators"></div>
 
