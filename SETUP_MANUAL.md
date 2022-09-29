@@ -36,11 +36,13 @@ A continuación:
 Copiar el resultado y enviarlo al administrador del sistema para que lo registre en el servidor.
 
 # Descargar dependencias
-Ejecutar los siguientes comandos:
+Ejecutar los siguientes comandos uno a uno:
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo apt install nodejs
+sudo apt install nodejs npm python3-pip
+sudo pip3 install pillow
+sudo npm install -g nodemon
 ```
 # Clonar el repositorio remoto
 Se copiará todo el código de la página web en una carpeta local para que puedas modificarlo.
@@ -71,4 +73,4 @@ cd WebServer
 npm install
 ```
 
-Ya podemos volver a CSCServer con `cd CSCServer` ejecutar el script build.py de la forma descrita en la documentación (`python3 build.py`).
+Ya podemos volver a CSCServer con `cd ..` ejecutar el script build.py de la forma descrita en la documentación (`python3 build.py`).
